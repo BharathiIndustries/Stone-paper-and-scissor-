@@ -1,0 +1,77 @@
+from random import randint as r
+
+fo = int(input("For how many points do you want to play :"))
+re = 0
+computer = 0
+you = 0
+
+l = ["Stone","Paper","Scissor"]
+
+while re< fo:
+    l = ["Stone","Paper","Scissor"]
+    ran = r(0,2)
+    com = l[ran]
+    print("Moves : Stone(1), paper(2), Scissor(3)")
+    a = int(input("enter your move number :"))
+    x = l[a-1]
+    
+    if com == x:
+        print("computer move :",com)
+        print("Same moves no points")
+        re = re +1
+        print("*"*50)
+        
+    elif com == "Stone" and x == "Paper":
+        print("computer move :",com)
+        print("You get a point")
+        you = you + 1
+        re = re +1
+        print("*"*50)
+        
+    elif com == "Stone" and x == "Scissor":
+        print("computer move :",com)
+        print("The computer gets a point")
+        computer = computer + 1
+        re = re +1
+        print("*"*50)
+        
+    elif com == "Paper" and x == "Scissor":
+        print("computer move :",com)
+        print("You get a point")
+        you = you + 1
+        re = re +1
+        print("*"*50)
+        
+    elif com == "Paper" and x == "Stone":
+        print("computer move :",com)
+        print("The computer gets a point")
+        computer = computer + 1
+        re = re +1
+        print("*"*50)
+        
+    elif com == "Scissor" and x == "Stone":
+        print("computer move :",com)
+        print("You get a point")
+        you = you + 1
+        re = re +1
+        print("*"*50)
+        
+    elif com == "Scissor" and x == "Paper":
+        print("computer move :",com)
+        print("The computer gets a point")
+        computer = computer + 1
+        re = re +1
+        print("*"*50)
+
+if computer > you:
+    print("The computer got :",computer,"points")
+    print("You got :",you,"points")
+    print("The computer wins")
+elif you > computer:
+    print("The computer got :",computer,"points")
+    print("You got :",you,"points")
+    print("You win")
+elif you == computer:
+    print("The computer got :",computer,"points")
+    print("You got :",you,"points")
+    print("It's a tie")
